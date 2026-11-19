@@ -136,6 +136,7 @@ impl Triple {
             | OperatingSystem::Hurd
             | OperatingSystem::L4re
             | OperatingSystem::Linux
+            | OperatingSystem::Qnx
             | OperatingSystem::Netbsd
             | OperatingSystem::Openbsd
             | OperatingSystem::Redox
@@ -213,6 +214,7 @@ impl fmt::Display for Triple {
                 && (self.environment == Environment::Android
                     || self.environment == Environment::Androideabi
                     || self.environment == Environment::Kernel))
+                || self.operating_system == OperatingSystem::Qnx
                 || self.operating_system == OperatingSystem::Wasi
                 || self.operating_system == OperatingSystem::WasiP1
                 || self.operating_system == OperatingSystem::WasiP2
